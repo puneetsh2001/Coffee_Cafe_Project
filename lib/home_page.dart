@@ -44,170 +44,174 @@ class Homepage extends StatelessWidget {
         width: 500,
         height: 800,
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(child: Text("Menu")),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              width: 430,
-              height: 40,
-              child: TextField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.deepOrangeAccent),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(child: Text("Menu")),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: 430,
+                height: 40,
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.deepOrangeAccent),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.brown),
+                    ),
+                    // border: OutlineInputBorder(
+                    //  borderRadius: BorderRadius.circular(20),
+                    //   borderSide: BorderSide(color: Colors.brown,)
+                    // )
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.brown),
-                  ),
-                  // border: OutlineInputBorder(
-                  //  borderRadius: BorderRadius.circular(20),
-                  //   borderSide: BorderSide(color: Colors.brown,)
-                  // )
                 ),
               ),
-            ),
-            SizedBox(child: Text("Categories")),
-            Container(
-              width: 430,
-              height: 40,
-              padding: EdgeInsets.all(10),
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: ElevatedButton.icon(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown,
-                      ),
-                      icon: Icon(Icons.coffee, color: Colors.white),
-                      label: Text(
-                        "Cold Coffee",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: OutlinedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.coffee),
-                      label: Text("Hot Coffee"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: OutlinedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.coffee),
-                      label: Text("Shake"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: OutlinedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.icecream),
-                      label: Text("Ice Cream"),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 630,
-              margin: EdgeInsets.only(top: 10),
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return ColdCoffee1();
-                          },
+              SizedBox(child: Text("Categories")),
+              Container(
+                width: double.infinity,
+                height: 40,
+                padding: EdgeInsets.all(10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: ElevatedButton.icon(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.brown,
                         ),
-                      );
-                    },
-                    child: Container(
-                      // Navigator.push(context, MaterialPageRoute(builder: (context){return Iconcardimage();})),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.brown, width: 2),
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/cold_coffee_4.jpg'),
-                          fit: BoxFit.cover,
+                        icon: Icon(Icons.coffee, color: Colors.white),
+                        label: Text(
+                          "Cold Coffee",
+                          style: TextStyle(color: Colors.black),
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.brown, width: 2),
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/cold_coffee_1.jpg'),
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: OutlinedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(Icons.coffee),
+                        label: Text("Hot Coffee"),
                       ),
                     ),
-                  ),
-                  Container(
-                    // color: Colors.yellow,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.brown, width: 2),
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/cold_drink_2.jpg'),
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: OutlinedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(Icons.coffee),
+                        label: Text("Shake"),
                       ),
                     ),
-                  ),
-                  Container(
-                    // color: Colors.pink,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.brown, width: 2),
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/cold_coffee_3.jpg'),
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: OutlinedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(Icons.icecream),
+                        label: Text("Ice Cream"),
                       ),
                     ),
-                  ),
-                  Container(
-                    // color: Colors.deepOrangeAccent,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.brown, width: 2),
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/cold_coffee_4.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // color: Colors.deepOrangeAccent,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.brown, width: 2),
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/coffee_6.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+              Expanded(
+                child: Container(
+                  height: 630,
+                  margin: EdgeInsets.only(top: 10),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ColdCoffee1();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          // Navigator.push(context, MaterialPageRoute(builder: (context){return Iconcardimage();})),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.brown, width: 2),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/cold_coffee_4.jpg'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.brown, width: 2),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/cold_coffee_1.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // color: Colors.yellow,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.brown, width: 2),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/cold_drink_2.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // color: Colors.pink,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.brown, width: 2),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/cold_coffee_3.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // color: Colors.deepOrangeAccent,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.brown, width: 2),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/cold_coffee_4.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // color: Colors.deepOrangeAccent,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.brown, width: 2),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/coffee_6.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/bottom_Navigation_widget.dart';
+import 'package:untitled/categories.dart';
 import 'package:untitled/data_table.dart';
+import 'package:untitled/home.dart';
 import 'package:untitled/home_page.dart';
 import 'package:untitled/task_card.dart';
 
 import 'First_page.dart';
 import 'icon_card_image.dart';
 
-class Taskcoffee extends StatefulWidget {
-  const Taskcoffee({super.key});
+class Bottomnavigation extends StatefulWidget {
+  const Bottomnavigation({super.key});
 
   @override
-  State<Taskcoffee> createState() => _TaskcoffeeState();
+  State<Bottomnavigation> createState() => _BottomnavigationState();
 }
 
-class _TaskcoffeeState extends State<Taskcoffee> {
+class _BottomnavigationState extends State<Bottomnavigation> {
   int selectBottomNavVal = 0;
-  List pages = [Homepage(), Taskcard(), Datatable()];
+  List pages = [Home(), Categories(), Datatable()];
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +38,12 @@ class _TaskcoffeeState extends State<Taskcoffee> {
               items: [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.account_circle_outlined),
-                  label: "Profile",
+                  icon: Icon(Icons.category),
+                  label: "Categories",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-                  label: "Setting",
+                  icon: Icon(Icons.person),
+                  label: "Profile",
                 ),
               ],
               currentIndex: selectBottomNavVal,
